@@ -1,25 +1,51 @@
+// Repetição otimizada com For
+
 function tocaSom (IdElementAudio) {
-    document.querySelector (IdElementAudio).play()    
-}
+        document.querySelector (IdElementAudio).play()    
+    }
+    
+    const listaDeTeclas = document.querySelectorAll('.tecla')
 
-const listaDeTeclas = document.querySelectorAll('.tecla')
+    
+    for (let  i = 0; i < listaDeTeclas.length; i++) {
+    
+        const tecla = listaDeTeclas[i];
+        const intrumento = tecla.classList[1]
+        const idAudio = `#som_${intrumento}`
+    
+        tecla.onclick = function () {
+            tocaSom(idAudio)
+        };        
+    }
+    
+    
+// _______________________________________________________________________________________________
 
-let  i = 0
+// EXEMPLO FUNCIONAL COM WHILE
 
-while (i < listaDeTeclas.length){
+// function tocaSom (IdElementAudio) {
+//     document.querySelector (IdElementAudio).play()    
+// }
 
-    const tecla = listaDeTeclas[i];
-    const intrumento = tecla.classList[1]
-    const idAudio = `#som_${intrumento}`
+// const listaDeTeclas = document.querySelectorAll('.tecla')
 
-    tecla.onclick = function () {
-        tocaSom(idAudio)
-    };
+// let  i = 0
 
-    i++
-}
+// while (i < listaDeTeclas.length){
+
+//     const tecla = listaDeTeclas[i];
+//     const intrumento = tecla.classList[1]
+//     const idAudio = `#som_${intrumento}`
+
+//     tecla.onclick = function () {
+//         tocaSom(idAudio)
+//     };
+
+//     i++
+// }
 
 
+// _______________________________________________________________________________________________
 
 /*
 Essa função abaixo funciona muito bem, mas como são 9 botões,
